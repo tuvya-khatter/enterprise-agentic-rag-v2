@@ -2,7 +2,7 @@
 
 A production-grade agentic retrieval-augmented generation system for enterprise knowledge bases. Built with LangGraph, Amazon Bedrock, hybrid retrieval, prompt caching, and full observability. Designed to show what enterprise RAG actually looks like beyond a toy demo.
 
-[![CI](https://github.com/tuvya-khatter/enterprise-agentic-rag-v2/actions/workflows/ci.yml/badge.svg)](https://github.com/tuvya-khatter/enterprise-agentic-rag-v2/actions/workflows/ci.yml)
+[![CI](https://github.com/tuvya-khatter/enterprise-agentic-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/tuvya-khatter/enterprise-agentic-rag/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
