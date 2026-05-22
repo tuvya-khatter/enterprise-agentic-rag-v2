@@ -1,0 +1,80 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "enterprise-agentic-rag"
+version = "0.1.0"
+description = "Production-grade agentic RAG for enterprise knowledge bases"
+authors = [
+    {name = "Tuvya Khatter", email = "tuvya.khatter@gmail.com"},
+]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    # Web framework
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-multipart>=0.0.9",
+    # Agent orchestration
+    "langgraph>=0.0.40",
+    "langchain>=0.1.0",
+    "langchain-aws>=0.1.0",
+    # AWS
+    "boto3>=1.34.0",
+    # Vector & DB
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.9",
+    "pgvector>=0.2.0",
+    "asyncpg>=0.29.0",
+    # Retrieval
+    "rank-bm25>=0.2.2",
+    "sentence-transformers>=2.5.0",
+    # Observability
+    "opentelemetry-api>=1.22.0",
+    "opentelemetry-sdk>=1.22.0",
+    "opentelemetry-instrumentation-fastapi>=0.43b0",
+    "opentelemetry-exporter-otlp>=1.22.0",
+    "prometheus-client>=0.19.0",
+    "langfuse>=2.20.0",
+    # Utilities
+    "httpx>=0.27.0",
+    "tenacity>=8.2.0",
+    "structlog>=24.1.0",
+    "python-dotenv>=1.0.0",
+    "pypdf>=4.0.0",
+    "tiktoken>=0.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.2.0",
+    "mypy>=1.8.0",
+    "ragas>=0.1.0",
+    "httpx>=0.27.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "B", "UP", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
